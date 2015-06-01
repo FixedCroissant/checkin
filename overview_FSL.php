@@ -7,9 +7,10 @@ include('checkinPopulation.php');
 <?php
 /* 
  * Author: J. Williams
- * Date: 03/06/2014
+ * Date: 06/01/2015
  * Version: 1.00
- * Description: A basic report that lists all the students that have told University Housing that they're going to be doing a Co-Op in the upcoming term..
+ * Description: This is the overview or dashboard of the students that have checked in for the department of 
+ * Fraternity & Sorority Life of those students that have checked in for Opening Week 2015...
  */
 
 // Create connection
@@ -75,10 +76,10 @@ University Housing - Welcome Week Sign Up
 <body>
 <br/>
 <br/>
-<p><img src="https://housing.ncsu.edu/secure/images/logo.png" alt="University Housing logo" title="NC State University Housing" /></p>
+<p><img src="images/fsl-text-logo-nw.png" alt="Fraternity & Sorority Life" title="NC State University - Fraternity & Sorority Life" /></p>
 <div id = "header">
     <h4>Welcome Week Check-In</h4>
-    <h5>Broken Down by Building</h5>
+    <h5>Broken Down by Organization Name</h5>
 </div>
 <!--All the user to pick the date they want information -->
 <div id="datechange">
@@ -179,9 +180,11 @@ University Housing - Welcome Week Sign Up
             <br/>
 </div>
 <div id="columnControls">
-    <p> Other Reports <img src="images/other_reports.png" alt="other reports available"></p>
+<!--    Currently Disabled-->
+<!--    <p> Other Reports <img src="images/other_reports.png" alt="other reports available"></p>-->
     <ul>
-    <li><a href='overview_campus_area.php?dateREQUESTED=allDATES'>View by Campus Area</a></li>
+        <!--Currently disabled-->
+        <!--<li><a href='overview_campus_area.php?dateREQUESTED=allDATES'>View by Campus Area</a></li>-->
     </ul>
     <p>Currently hidden columns <img src="images/hidden_columns.png" alt="currently hidden columns"></p>
     <ul>
@@ -199,11 +202,11 @@ University Housing - Welcome Week Sign Up
  <thead>
   <!--Residence Hall or Apartment Name-->
  <th style="width: 150px;">
-     Residence Hall & Apartments
+     FSL Org. Name
  </th>
   <!--Beds allocated for each building per PeopleSoft lookup.-->
  <th style="width:145px"  class="bed_information">
-     Beginning Beds 
+     Beginning Beds <span style="background-color:yellow;border:1px solid black; font-size: x-small;">[CURRENTLY FAKE NUMBERS]</span>
  </th>
  <!--Initial hide this block-->
  <!--From just over mid-night to 7:00am-->
@@ -273,14 +276,21 @@ University Housing - Welcome Week Sign Up
     $totalResultsGrouping= array();
     
     //THESE ARE GROUPS!!!! OF BUILDINGS. THEY WILL BE BROKEN DOWN AND SEPARATED LIKE AVENT FERRY === AFC-A,AFC-B,AFC-E,AFC-F.
+    
+    //Greek Life
+    //Setting these values for 100,90,80,70,60,50,40,30, etc.
+    //THESE ARE NOT PULLING FROM A DATABSE
     //$initial_bed_count = array("Alexander Hall"=>"160","Avent Ferry"=>"586","Bagwell Hall"=>"100","Becton Hall"=>"250","Berry Hall"=>"56","Bowen Hall"=>"75","Bragaw Hall"=>"737","Carroll Hall"=>"342","Gold Hall"=>"56","Lee Hall"=>"730","Metcalf Hall"=>"396","North Hall"=>"231","Owen Hall"=>"366","Sullivan Hall"=>"688","Syme Hall"=>"205","Tucker Hall"=>"348","Turlington Hall"=>"156","Watauga Hall"=>"94","Welch Hall"=>"56","Wood Hall"=>"457","Wolf Village"=>"1187","Wolf Ridge"=>"1158");
     
+    $initial_bed_count = array("Lambda Chi Alpha"=>"110","Sigma Kappa"=>"100","Kappa Alpha"=>"90","Delta Zeta"=>"80","Alpha Delta Pi"=>"70","Kappa Sigma"=>"60","Delta Gamma"=>"50","Kappa Alpha Theta"=>"40","Pi Beta Phi"=>"30","Sigma Alpha Epsilon"=>"20","Sigma Phi Epsilon"=>"10");
     
     //Get the initial bed counts from the SIS database.
-    include('utilities/readRoomAvail.php');
+    //THIS INFORMATION IS FOR FRATERNITY & SORORITY LIFE
+    //TEMPORARILY COMMENTED OUT.
+    //include('utilities/readRoomAvail-FSL.php');
     
-    //Create an array of Residence Halls & Complexes.
-    $residenceHALLSANDAPARTMENTS = array("Alexander Hall","Avent Ferry","Bagwell Hall","Becton Hall","Berry Hall","Bowen Hall","Bragaw Hall","Carroll Hall","Gold Hall","Lee Hall","Metcalf Hall","North Hall","Owen Hall","Sullivan Hall","Syme Hall","Tucker Hall","Turlington Hall","Watauga Hall","Welch Hall","Wood Hall","Wolf Village","Wolf Ridge");
+    //Create an array of Greek Life Villages.
+    $GreekVillages = array("Lambda Chi Alpha","Sigma Kappa","Kappa Alpha","Delta Zeta","Alpha Delta Pi","Kappa Sigma","Delta Gamma","Kappa Alpha Theta","Pi Beta Phi","Sigma Alpha Epsilon","Sigma Phi Epsilon");
     
     //Get the date that we need from the option block that is currently residing on line(s) 50-65.
     //$dateNEEDED = "2015-03-12";
@@ -317,7 +327,7 @@ University Housing - Welcome Week Sign Up
                                 //END    
 
                                 //Provide a table that displays the individual results of each residence hall for a particular day that is selected by the drop-down list.
-                                foreach ($residenceHALLSANDAPARTMENTS as $residenceNAME){                       
+                                foreach ($GreekVillages as $residenceNAME){                       
                                                     //Set Residence Hall
                                                     $group1_RESIDENCE->setResidenceHall($residenceNAME);    
 
@@ -333,28 +343,11 @@ University Housing - Welcome Week Sign Up
                                                     $date_needed = $group1_RESIDENCE->getDateNeeded();
                                                     
 
-                                                    //Residence Location!!!
+                                                    //Greek Village Location!!!
                                                     echo "<tr>";
                                                     echo "<td>";
-                                                        //By clicking on the link for residence hall, they will get a break down for sub areas
-                                                        //Avent Ferry will break down to AFC-A, AFC-B,AFC-C, etc.
-
-                                                    if($residence==="Avent Ferry")
-                                                        {
-                                                        echo "<a href='http://localhost/apps/checkin/overview_detailed_list.php?dateREQUESTED=".$dateNEEDED ."&building_needed=Avent%20Ferry' title='Click to get a sub-report of building. i.e. Avent Ferry broken down by AFC-A,AFC-B,AFC-C'>".$residence."</a>";
-                                                    }
-                                                    else if($residence==="Wood Hall"){
-                                                        echo "<a href='http://localhost/apps/checkin/overview_detailed_list.php?dateREQUESTED=".$dateNEEDED ."&building_needed=Wood%20Hall' title='Click to get a sub-report of building. i.e. Wood Hall broken into Wood-A and Wood-B'>".$residence."</a>";
-                                                    }
-                                                    else if($residence==="Wolf Village"){
-                                                        echo "<a href='http://localhost/apps/checkin/overview_detailed_list.php?dateREQUESTED=".$dateNEEDED."&building_needed=Wolf%20Village' title='Click to get a sub-report of building. i.e. Wolf Village broken into buildings, Wolf Village A-H'>".$residence."</a>";
-                                                    }
-                                                    else if($residence==="Wolf Ridge"){
-                                                        echo "<a href='http://localhost/apps/checkin/overview_detailed_list.php?dateREQUESTED=".$dateNEEDED."&building_needed=Wolf%20Ridge' title='Click to get a sub-report of building. i.e. Wolf Ridge broken down into WR Grove, WR Innovation, WR Lakeview,etc.'>".$residence."</a>";
-                                                    }
-                                                    else{
                                                        echo $residence; 
-                                                    }                        
+                                                                            
                                                         //echo $residence;                            
                                                     echo "</td>";
 
@@ -519,7 +512,7 @@ University Housing - Welcome Week Sign Up
                                 //END    
 
                                 //Provide a table that displays the individual results of each residence hall for a particular day that is selected by the drop-down list.
-                                foreach ($residenceHALLSANDAPARTMENTS as $residenceNAME){                       
+                                foreach ($GreekVillages as $residenceNAME){                       
                                                     //Set Residence Hall
                                                     $group1_RESIDENCE->setResidenceHall($residenceNAME);    
 
@@ -718,7 +711,7 @@ University Housing - Welcome Week Sign Up
                                 //END    
 
                                 //Provide a table that displays the individual results of each residence hall for a particular day that is selected by the drop-down list.
-                                foreach ($residenceHALLSANDAPARTMENTS as $residenceNAME){                       
+                                foreach ($GreekVillages as $residenceNAME){                       
                                                     //Set Residence Hall
                                                     $group1_RESIDENCE->setResidenceHall($residenceNAME);    
 
@@ -905,7 +898,9 @@ $conn = null;
 <!--Comment out Charts as they're not needed-->
 <p>Chart Options</p>
 
-<div id ="reportOptions">
+<!--Removed as likely not necessary for FSL-->
+<!--Commented out on 06 01 2015 @ 4:29p-->
+<!--<div id ="reportOptions">
     <p>
         Which chart would you like to view? <br/>
         <select id="chart_options" name="chart_options">
@@ -916,8 +911,7 @@ $conn = null;
         <br/>
         <input type='button' id='displayChart' value='Display Area Chart'><input type='button' id='hideChart' value='Hide Area Chart'>
     </p>
-    
-</div>
+</div>-->
 
 
 <div id='overview_of_results'>
