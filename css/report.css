@@ -1,0 +1,83 @@
+/* 
+    Created on : Dec 10, 2014, 3:17:05 PM
+    Author     : jjwill10
+*/
+
+#columnControls p{
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+    font-size: medium;
+}
+
+#columnControls a:link{
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+    font-size: small;
+}
+th{
+    /*font-family: "Arial";*/
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+    font-weight: bold;
+    background-color: #E1E1E1;
+    font-size: medium;
+}
+
+thead{
+    background-color: #CACACA;
+    color: #000000;
+}
+
+td{
+    font-family: "Arial Narrow",Arial,sans-serif;
+    font-size: small;
+    text-align: center;
+}
+
+#header{
+    text-align:center;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+table{
+    width: 100%;
+    
+}
+
+#overview_of_results{
+    margin-left: 100px;
+}
+
+
+#columnControls{
+    width: 400px;
+    text-align: left;
+    border: 1px solid black;
+    float: right;
+    margin-right: 125px;
+}
+#columnControls a:link{
+    font-size: medium;
+}
+
+#datechange{
+    float: left;
+    margin-left: 25px;
+}
+
+.initial_hide{
+    width: 20px;
+    display:none;
+}
+
+#chart_div{
+    margin-left: 10px;
+}
+#customDatesWanted{
+    
+    padding-bottom: 25px;
+}
+#customBeginDate{
+ 
+}
+#customEndDate{
+ margin-left: 11px;
+}

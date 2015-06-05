@@ -1,0 +1,24 @@
+Date: March 16, 2015
+Notes about each individual totals for each residence hall.   
+
+//Totals for each Hall are kept in the array called $totalResultsGrouping, it is defined as this:
+    //Alexander is location in $totalResultsGrouping[0]
+    //Avent Ferry is located in $totalResultsGrouping[1]
+    //Bagwell Hall is located in $$totalResultsGrouping[2];
+    //Becton Hall is located in $totalResultsGrouping[3];
+    //Berry Hall is located in $totalResultsGrouping[4];
+    //Bowen Hall is located in $totalResultsGrouping[5];
+    //Bragaw Hall is located in $totalResultsGrouping[6];
+    //Carroll Hall is located in $totalResultsGrouping[7];
+    //Gold Hall is located in $totalResultsGrouping[8];
+    //Lee Hall is located in $totalResultsGrouping[9];
+    //Metcalf Hall is located in $totalResultsGrouping[10];
+    //North Hall is located in $totalResultsGrouping[11];
+    //Owen Hall is located in $totalResultsGrouping[12];
+    //Sullivan Hall is located in $totalResultsGrouping[13];
+    //Syme Hall is located in $totalResultsGrouping[14];
+    //Tucker Hall is located in $totalResultsGrouping[15];
+    //Turlington Hall is located in $totalResultsGrouping[16];
+    //Watauga Hall is located in $totalResultsGrouping[17];
+    //Welch Hall is located in $totalResultsGrouping[18];
+    //Wood Hall is located in $totalResultsGrouping[19];

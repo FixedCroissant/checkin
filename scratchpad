@@ -1,0 +1,2 @@
+SELECT * FROM `welcome_week_signup` WHERE `residence_group`="Avent Ferry" && `date_of_swipe`>="2015-03-16" && `date_of_swipe`<='2015-03-20' ORDER BY `date_of_swipe` 
+^ query working on
