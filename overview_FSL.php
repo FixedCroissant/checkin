@@ -896,7 +896,7 @@ $conn = null;
 <br/>
 <br/>
 <!--Comment out Charts as they're not needed-->
-<p>Chart Options</p>
+<!--<p>Chart Options</p>-->
 
 <!--Removed as likely not necessary for FSL-->
 <!--Commented out on 06 01 2015 @ 4:29p-->
