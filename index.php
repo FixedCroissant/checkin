@@ -45,9 +45,10 @@ $time_Needed = "<span id='ct'></span>";
           <!-- Stack the columns on mobile by making one full-width and the other half-width -->
           <div class="container-fluid">
               <div id="header">
-                  <img class="img-responsive" src="images/logo.png" alt="University Housing">
                   <input type="button" name="logout" onClick="window.location='https://housing.ncsu.edu/Shibboleth.sso/Logout'"
-                value="Logout of Beep System" style="float:right;" />
+                         value="Logout of Beep System" style="float:right;" />
+                  <img class="img-responsive" src="images/logo.png" alt="University Housing">
+
               </div> 
               
               <h2>North Carolina State University </h2>
