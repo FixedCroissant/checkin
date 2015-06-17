@@ -161,18 +161,33 @@ $(document).ready(function() {
                 {
                     closeResults();
                     clearGlypicons();
+                    //Updated 06 11 2015.
+                    //Add the update cell phone number back and represent it to the end user.
+                    addCellPhoneNumberBack();
                 }
         
         });
     
    //If the reset button on the form is clicked, then clear the icon and the text inside the card scan value.
      $("#reset_button").click(function () {
-        closeResults();
+         //Get rid of the results page that is showing up in the representative div.
+         closeResults();
          //clear icons
          clearGlypicons();
+         //remove spanned text  if it exists in the system.
+         addCellPhoneNumberBack();
+         //Allow the person to check the "Check-In Student" button.
+         $('#submit_button').prop("disabled",false);
      });
 });
 
+
+    function addCellPhoneNumberBack(){
+        //First remove the span with the descriptive text that states, "Unfortunately, we cannot update the phone number, as there is one already in the system."
+        $('#cellphone_update_yes_spanned_text').text('Yes');
+        //Now, let's re-show the div again.
+        $('.add_cell_phone_number').show();
+    }
 
  function clearGlypicons(){
              removeDiv('checkbox')

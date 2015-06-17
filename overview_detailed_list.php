@@ -46,13 +46,21 @@ University Housing - Welcome Week Sign Up - Detailed Report
 <link rel='stylesheet' type='text/css' href='//cdn.datatables.net/1.10.4/css/jquery.dataTables.css'>
 <link rel='stylesheet' type='text/css' href='css/report.css'>
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+<!--Ability to Export tables to PDF or Excel format-->
+    <script type="text/javascript" src="excel_export/html_table_export/tableExport.js"></script>
+    <script type="text/javascript" src="excel_export/html_table_export/jquery.base64.js"></script>
+<!--End ability to Export tables-->
+<!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<!--End Bootstrap-->
 <!--Fav Icon-->
 <link rel="shortcut icon" href="https://housing.ncsu.edu/images/favicon.ico" />
 </head>
 <body>
-<br/>
-<br/>
-<p><img src="https://housing.ncsu.edu/secure/images/logo.png" alt="University Housing logo" title="NC State University Housing" /></p>
+<input type="button" name="logout" onClick="window.location='https://housing.ncsu.edu/Shibboleth.sso/Logout'"
+                         value="Logout of Beep System" style="float:right;" />
+<img src="https://housing.ncsu.edu/secure/images/logo.png" alt="University Housing logo" title="NC State University Housing" />
 <div id = "header">
     <h4>Welcome Week Check-In</h4>
     <p>Detailed report of individual building.</p>
@@ -97,11 +105,12 @@ University Housing - Welcome Week Sign Up - Detailed Report
 <br/>
 <br/>
 <br/>
-<a href='overview.php?dateREQUESTED=<?php echo $dateNEEDED ?>&building_needed=<?php echo $buildingDETAIL_NEEDED; ?>' title='Click to go back to overview of detailed building report.'>Go back</a>
+<!--<a href='overview.php?dateREQUESTED=<?php echo $dateNEEDED ?>&building_needed=<?php echo $buildingDETAIL_NEEDED; ?>&beginningDateNeededCustom=<?php $beginDATENEEDED?>&endingDateNeededCustom=<?php $endDATENEEDED?>' title='Click to go back to overview of detailed building report.'>Go back</a>-->
 
 
 <p>The date the information is looking at is the: <strong><?php echo $dateNEEDED?></strong> date.</p>
 <br/>
+
 
 <table id="welcome_week_checkin" border="1">
  <thead>
@@ -111,54 +120,54 @@ University Housing - Welcome Week Sign Up - Detailed Report
  </th>
   <!--Beds allocated for each building per PeopleSoft lookup.-->
  <th style="width:145px"  class="bed_information">
-     Beginning Beds 
+Beginning Beds
  </th>
 
 <th style="width: 130px;" class=''>
-     12:01-7:59 am
+12:01-7:59am
 </th>
  <!--8:00-9:00-->
  <th>
-     8-9 am
+8-9am
  </th>
  <!--9:00-10:00-->
  <th>
-     9-10 am
+9-10am
  </th>
  <!--10:00-11:00-->
  <th>
-     10-11 am
+10-11am
  </th>
  <!--11:00-12:00-->
  <th>
-     11-12 n
+11-12n
  </th>
  <!--12:00-1:00p-->
  <th>
-     12-1 pm
+12-1pm
  </th>
  <!--1:00-2:00-->
  <th>
-     1-2 pm
+1-2pm
  </th>
  <!--2:00-3:00-->
  <th>
-     2-3 pm
+2-3pm
  </th>
  <!--3:00-4:00-->
  <th>
-     3-4 pm
+3-4pm
  </th>
  <!--4:00-5:00-->
  <th>
-     4-5 pm
+4-5pm
  </th>
  
 <th style="width: 130px;" class=''>
-     5:01-12:00 am
+ 5:01-12:00am
  </th>
  <th>
-     Totals:
+ Totals:
  </th>
  
  <!--Add amount of buildings left under here -->
@@ -179,7 +188,6 @@ University Housing - Welcome Week Sign Up - Detailed Report
     $totalResults=0;    
     $totalResultsGrouping= array();
     
-    
     //THESE ARE GROUPS!!!! OF BUILDINGS. THEY WILL BE BROKEN DOWN AND SEPARATED LIKE AVENT FERRY === AFC-A,AFC-B,AFC-E,AFC-F.    
     
     //Set of if statement(s) to assign array, based on the building specified.
@@ -190,6 +198,7 @@ University Housing - Welcome Week Sign Up - Detailed Report
     $residenceBUILDINGS = array("AFC - A","AFC - B","AFC - E","AFC - F");
     //Set up array.
     $initial_bed_count=array("AFC - A"=>"106","AFC - B"=>"114","AFC - E"=>"216","AFC - F"=>"150");
+
     }
     else if($buildingDETAIL_NEEDED==="Wood Hall"){
     
@@ -241,7 +250,7 @@ University Housing - Welcome Week Sign Up - Detailed Report
     
     //START
     //Provide all Information FOR THE ENTIRE WEEK THAT WE CAN USE ON OUR CHART.
-    include('completeTOTALS.php');
+    include('completeTOTALSforGraph.php');
     //END    
     
     if($dateNEEDED==="allDATES"){
@@ -259,8 +268,6 @@ University Housing - Welcome Week Sign Up - Detailed Report
 
                                                     //Specify the date that we need and assign to a "date_needed" variable.
                                                     $date_needed = $group1_RESIDENCE->getDateNeeded();
-                                                    
-
                                                     //Residence Location!!!
                                                     echo "<tr>";
                                                     echo "<td>";
@@ -342,7 +349,100 @@ University Housing - Welcome Week Sign Up - Detailed Report
                                                     
                                                     //Get totals
                                                     include('begincell.php');
-                                                    echo $totalResults;
+
+                                                   /**
+                                                   * GET TOTALS
+                                                   */
+                                                  //Add clickable totals per Tim Blair.
+                                                  //echo $totalResults;
+
+                                                  //Provide link that will display a new report once clicked that will show the total
+                                                  //amount of people for a specified residence hall or apartment.
+
+                                                  //echo $totalResults;
+                                                  //We will want ALL check-ins for a specific building.
+                                                  //Parameters needed
+                                                  //residence=___________________________ [Building parameter should already be housed in the $residence variable ]
+                                                  //beginTIME=___________________________ [Since it's the beginning of the day, should start at 0]
+                                                  //endTIME=_____________________________ [Since it's the end of the day, it should end at 24]
+                                                  //dateNEEDEDSTART = ___________________ [These can be custom dates in the format XXXX-XX-XX YYYY-MM-DD]
+                                                  //dateNEEDEDEND = _____________________ [This can be a custom date in the format XXXX-XX-XX YYYY-MM-DD]
+
+                                                  //Specifically setting both the begging time to the beginning of the day.
+                                                  $timeBEGINforReport=0;              //0 will be 0:00 i.e. the very beginning of the day.
+                                                  //Specifically setting the ending time for the end of the day.
+                                                  $timeENDforReport=24;               //24 will be 24:00 i.e. midnight
+
+
+                                                  //Make conversions for individual building to total building.
+                                                  //i.e. if it states Wolf Village D, (Wolf Vlg D.) then change building to Wolf Village
+
+                                                  //Begin Switch Statement
+                                                  switch($residence) {
+                                                      case "Wolf Vlg A":
+                                                          $residence = "Wolf Village";
+                                                          break;
+                                                      case "Wolf Vlg B":
+                                                          $residence = "Wolf Village";
+                                                          break;
+                                                      case "Wolf Vlg C":
+                                                          $residence = "Wolf Village";
+                                                          break;
+                                                      case "Wolf Vlg D":
+                                                          $residence = "Wolf Village";
+                                                          break;
+                                                      case "Wolf Vlg E":
+                                                          $residence = "Wolf Village";
+                                                          break;
+                                                      case "Wolf Vlg F":
+                                                          $residence = "Wolf Village";
+                                                          break;
+                                                      case "Wolf Vlg G":
+                                                          $residence = "Wolf Village";
+                                                          break;
+                                                      case "Wolf Vlg H":
+                                                          $residence = "Wolf Village";
+                                                          break;
+                                                      case "WR Grove":
+                                                          $residence = "Wolf Ridge";
+                                                          break;
+                                                      case "WR Innovat":
+                                                          $residence = "Wolf Ridge";
+                                                          break;
+                                                      case "WR Lakevw":
+                                                          $residence = "Wolf Ridge";
+                                                          break;
+                                                      case "WR Plaza":
+                                                          $residence = "Wolf Ridge";
+                                                          break;
+                                                      case "WR Tower":
+                                                          $residence = "Wolf Ridge";
+                                                          break;
+                                                      case "WR Valley":
+                                                          $residence = "Wolf Ridge";
+                                                          break;
+                                                      case "Wood - A":
+                                                          $residence = "Wood Hall";
+                                                          break;
+                                                      case "Wood - B":
+                                                          $residence = "Wood Hall";
+                                                          break;
+                                                      case "AFC - A":
+                                                          $residence = "Avent Ferry";
+                                                          break;
+                                                      case "AFC - B":
+                                                          $residence = "Avent Ferry";
+                                                          break;
+                                                      case "AFC - E":
+                                                          $residence = "Avent Ferry";
+                                                          break;
+                                                      case "AFC - F":
+                                                          $residence = "Avent Ferry";
+                                                          break;
+                                                  } //End Switch Statement
+
+                                                    echo "<a href='report_for_specific_area_totals.php?residence=".$residence."&dateNEEDEDSTART=".$beginDATENEEDED."&dateNEEDEDEND=".$endDATENEEDED."&beginTIME=".$timeBEGINforReport."&&endTIME=".$timeENDforReport."' target='_blank')'>$totalResults</a>";
+
                                                     echo"</td>";
 
                                                         //Add to our total Results array for usuage in the Chart.
@@ -378,6 +478,272 @@ University Housing - Welcome Week Sign Up - Detailed Report
                                                     }//close for each
 
     }
+
+    //If someone selects custom dates then we need to pick the custom dates from the POST form.
+    //
+    if($dateNEEDED="custom") {
+        //These dates will be custom based on what the person picked.
+        //Get Begin Date
+        $beginDATENEEDED =$_REQUEST['dateBegin'];
+        //Get End Date
+        $endDATENEEDED = $_REQUEST['dateEnd'];
+
+        //Create a GoBack link for Custom Date Range, regardless, let's make it go to the main page.
+        echo "<a href='overview.php?dateREQUESTED=allDATES'title='Click to go back to overview of detailed building report.'>Go back</a>";
+
+        //Line breaks
+        echo "<br/>";
+        echo "<br/>";
+
+        //Let's make sure we are getting the correct dates from the  form.
+
+        echo 'Begin date you requested:'."  ".$beginDATENEEDED;
+        echo "<br/>";
+        echo 'End date you requested:'."  ".$endDATENEEDED;
+        //Three line breaks
+        echo "<br/>";
+        echo "<br/>";
+        echo "<br/>";
+
+        //Add ability to export the table data to a CSV, PDF, or Excel format.
+        echo "<div class=\"btn-group\" role=\"group\" aria-label=\"...\">";
+        echo "<button type=\"button\" onclick=\"$('#welcome_week_checkin').tableExport({type:'excel',escape:'true'});\" class=\"btn-warning btn-sm dropdown-toggle\" data-toggle=\"dropdown\"><i class=\"fa fa-bars\"></i> Export Table Data</button>";
+        echo "</div>";
+        //Line breaks
+        echo "<br/>";
+        //End the ability to export data.
+
+
+
+
+
+        foreach ($residenceBUILDINGS as $residenceNAME){
+            //Set Residence Hall
+            $group1_RESIDENCE->setResidenceHall($residenceNAME);
+
+            //Set Date Range Needed All Dates
+            //Check endcell_for_date_range.php for the 2 bound variables
+
+            $group1_RESIDENCE->setDateNeededRange($beginDATENEEDED, $endDATENEEDED);
+
+            //Specify the residence that we need and assign to "residence" variable.
+            $residence = $group1_RESIDENCE->getResidenceHall();
+
+            //Specify the date that we need and assign to a "date_needed" variable.
+            $date_needed = $group1_RESIDENCE->getDateNeeded();
+
+
+            //Residence Location!!!
+            echo "<tr>";
+            echo "<td>";
+            echo $residence;
+            //echo $residence;
+            echo "</td>";
+
+            //Provide bed numbers for building
+            echo "<td id='initial_bed_number' class='bed_information'>";
+            echo $initial_bed_count[$residenceNAME];
+            echo "</td>";
+
+            //Late at night check-ins
+            //Start at 00 and go to 7:00
+            for($x=0;$x<1;$x++){
+                //Set initial beginTIME.
+                $beginTIME="0".$x.":01";
+                $endTIME="07:59";
+                //Start the beginning of the cell.
+                include('begincell.php');
+
+                //Set Times for this Location.
+                $group1_RESIDENCE->setBeginTime($beginTIME);
+                $group1_RESIDENCE->setEndTime($endTIME);
+                //Close the cell off
+                include('endcells/endcell_buildinglookup_alldates.php');
+            }
+
+            //Start at 8 and go to 9
+            for($x=8;$x<17;$x++){
+                //Set initial beginTIME;
+                $beginTIME="0".$x.":00";
+
+                //Set conditions if the first digit (e.g. 10, 12, 13 ,etc) exists.
+                //If it's 08 (08:00 am); then we're going to need to add a 0.
+                if($x<9){
+                    $endTIME="0".($beginTIME+1).":00";
+                }
+
+                if($x==9){
+                    $endTIME=($beginTIME+1).":00";
+                }
+
+                //Otherwise, we can do 10, 11, 12, 13 (1:00), 14 (2:00), 15 (3:00), etc.
+                if($x>9){
+                    //Correct Begin Time.
+                    $beginTIME=$x.":00";
+                    $endTIME=($beginTIME+1).":00";
+                }
+
+                //Start the beginning of the cell.
+                include('begincell.php');
+
+                //Set Times for this Location.
+                $group1_RESIDENCE->setBeginTime($beginTIME);
+                $group1_RESIDENCE->setEndTime($endTIME);
+
+                //Close the cell off
+                include('endcells/endcell_buildinglookup_alldates.php');
+            }
+
+            //From 5:01pm until 12:00am
+            //Late at night check-ins
+            for($x=17;$x<18;$x++){
+                //Set initial beginTIME.
+                $beginTIME="17:01";
+                $endTIME="24:00";
+                //Start the beginning of the cell.
+                include('begincell.php');
+
+                //Set Times for this Location.
+                $group1_RESIDENCE->setBeginTime($beginTIME);
+                $group1_RESIDENCE->setEndTime($endTIME);
+
+                //Close the cell off
+                include('endcells/endcell_buildinglookup_alldates.php');
+            }
+            //End 5:01pm until 12:00am
+
+            //Get totals
+            include('begincell.php');
+            /**
+             * GET TOTALS
+             */
+            //Add clickable totals per Tim Blair.
+            //echo $totalResults;
+
+            //Provide link that will display a new report once clicked that will show the total
+            //amount of people for a specified residence hall or apartment.
+
+            //echo $totalResults;
+            //We will want ALL check-ins for a specific building.
+            //Parameters needed
+            //residence=___________________________ [Building parameter should already be housed in the $residence variable ]
+            //beginTIME=___________________________ [Since it's the beginning of the day, should start at 0]
+            //endTIME=_____________________________ [Since it's the end of the day, it should end at 24]
+            //dateNEEDEDSTART = ___________________ [These can be custom dates in the format XXXX-XX-XX YYYY-MM-DD]
+            //dateNEEDEDEND = _____________________ [This can be a custom date in the format XXXX-XX-XX YYYY-MM-DD]
+
+            //Specifically setting both the begging time to the beginning of the day.
+            $timeBEGINforReport=0;              //0 will be 0:00 i.e. the very beginning of the day.
+            //Specifically setting the ending time for the end of the day.
+            $timeENDforReport=24;               //24 will be 24:00 i.e. midnight
+
+            //Make conversions for individual building to total building.
+            //i.e. if it states Wolf Village D, (Wolf Vlg D.) then change building to Wolf Village
+
+            //Begin Switch Statement
+            switch($residence){
+                case "Wolf Vlg A":
+                   $residence="Wolf Village";
+                break;
+                case "Wolf Vlg B":
+                    $residence="Wolf Village";
+                    break;
+                case "Wolf Vlg C":
+                    $residence="Wolf Village";
+                    break;
+                case "Wolf Vlg D":
+                    $residence="Wolf Village";
+                    break;
+                case "Wolf Vlg E":
+                    $residence="Wolf Village";
+                    break;
+                case "Wolf Vlg F":
+                    $residence="Wolf Village";
+                    break;
+                case "Wolf Vlg G":
+                    $residence="Wolf Village";
+                    break;
+                case "Wolf Vlg H":
+                    $residence="Wolf Village";
+                    break;
+                case "WR Grove":
+                    $residence="Wolf Ridge";
+                    break;
+                case "WR Innovat":
+                    $residence="Wolf Ridge";
+                    break;
+                case "WR Lakevw":
+                    $residence="Wolf Ridge";
+                    break;
+                case "WR Plaza":
+                    $residence="Wolf Ridge";
+                    break;
+                case "WR Tower":
+                    $residence="Wolf Ridge";
+                    break;
+                case "WR Valley":
+                    $residence="Wolf Ridge";
+                    break;
+                case "Wood - A":
+                    $residence="Wood Hall";
+                    break;
+                case "Wood - B":
+                    $residence="Wood Hall";
+                    break;
+                case "AFC - A":
+                    $residence="Avent Ferry";
+                    break;
+                case "AFC - B":
+                    $residence="Avent Ferry";
+                    break;
+                case "AFC - E":
+                    $residence="Avent Ferry";
+                    break;
+                case "AFC - F":
+                    $residence="Avent Ferry";
+                    break;
+
+
+            }
+
+            //End Switch Statement
+
+            echo "<a href='report_for_specific_area_totals.php?residence=".$residence."&dateNEEDEDSTART=".$beginDATENEEDED."&dateNEEDEDEND=".$endDATENEEDED."&beginTIME=".$timeBEGINforReport."&&endTIME=".$timeENDforReport."' target='_blank')'>$totalResults</a>";
+            echo"</td>";
+
+            //Add to our total Results array for usuage in the Chart.
+            //Currently displayed results will be stored in the array called
+            //$totalResultsGrouping[]
+            $totalResultsGrouping[$residenceNAME]= $totalResults;
+
+            //Create a variable that will hold the amount left.
+            $amount_left= ($initial_bed_count[$residenceNAME]-$totalResults);
+
+            //Create a variable that will hold the percentage use for the occupancy for the building.
+            $percentage_occupied_temp=($amount_left/$initial_bed_count[$residenceNAME]);
+
+            //Format the number (above, percentage_occupied_temp) to a percentage so it's easily read, and format
+            //it to 1 decimal point.
+            $percentage_occupied = number_format($percentage_occupied_temp*100,1)."%";
+
+            //Display the information in the next table cell.
+            echo "<td class='bed_information' id='amount_of_beds_left'>";
+            echo $amount_left;
+            echo "</td>";
+
+            //Display the information in the next adjacent cell.
+            //Display the percentages of occupancy here.
+            echo "<td class='bed_information'>";
+            echo number_format((100-$percentage_occupied),2)."%";
+            echo "</td>";
+
+            //Clear total Results for a New Row.
+            $totalResults=0;
+            //Close Data Row
+            echo "</tr>";
+        }//close for each
+    }
+
     else{
     
     //Provide a table that displays the individual results of each residence hall for a particular day that is selected by the drop-down list.
@@ -477,13 +843,35 @@ University Housing - Welcome Week Sign Up - Detailed Report
                                                         include('endcells/endcell_for_date_range.php');
                                                     }
                         //End 5:01pm until 12:00am
-                        
-                        
-                        
-                            //Get totals
+
+                            /**
+                             * GET TOTALS
+                             */
+
+
+                           //Get totals
                             include('begincell.php');
-                            echo $totalResults;
-                            echo"</td>";
+                           //Add clickable totals per Tim Blair.
+                           //echo $totalResults;
+
+                           //Provide link that will display a new report once clicked that will show the total
+                           //amount of people for a specified residence hall or apartment.
+
+                           //echo $totalResults;
+                           //We will want ALL check-ins for a specific building.
+                           //Parameters needed
+                           //residence=___________________________ [Building parameter should already be housed in the $residence variable ]
+                           //beginTIME=___________________________ [Since it's the beginning of the day, should start at 0]
+                           //endTIME=_____________________________ [Since it's the end of the day, it should end at 24]
+                           //dateNEEDEDSTART = ___________________ [These can be custom dates in the format XXXX-XX-XX YYYY-MM-DD]
+                           //dateNEEDEDEND = _____________________ [This can be a custom date in the format XXXX-XX-XX YYYY-MM-DD]
+
+                           //Specifically setting both the begging time to the beginning of the day.
+                           $timeBEGINforReport=0;              //0 will be 0:00 i.e. the very beginning of the day.
+                           //Specifically setting the ending time for the end of the day.
+                           $timeENDforReport=24;               //24 will be 24:00 i.e. midnight
+                            echo "<a href='report_for_specific_area_totals.php?residence=".$residence."&dateNEEDEDSTART=".$beginDATENEEDED."&dateNEEDEDEND=".$endDATENEEDED."&beginTIME=".$timeBEGINforReport."&&endTIME=".$timeENDforReport."' target='_blank')'>$totalResults</a>";
+                             echo"</td>";
                             
                             //Add to our total Results array for usuage in the Chart.
                             //Currently displayed results will be stored in the array called
@@ -559,7 +947,18 @@ $conn = null;
 <br/>
 <br/>
 
-<!--<p>Chart Options</p>
+
+
+
+
+
+
+
+
+
+
+
+    <!--<p>Chart Options</p>
 <input type='button' id='displayChart' value='Display Area Chart'><input type='button' id='hideChart' value='Hide Area Chart'>-->
 <div id='overview_of_results'>
     
@@ -707,7 +1106,7 @@ $('#welcome_week_checkin .timeGroup17 a').each(function(){
 
 
 //Complete totals:
-$('#welcome_week_checkin .timeGroup18').each(function(){
+$('#welcome_week_checkin .timeGroup18 a').each(function(){
     val = parseFloat($(this).html());
     if (val > 0){
         completeTOTAL+= val;        

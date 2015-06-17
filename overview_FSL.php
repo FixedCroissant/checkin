@@ -323,7 +323,7 @@ University Housing - Welcome Week Sign Up
         
                                 //START
                                 //Provide all Information FOR THE ENTIRE WEEK THAT WE CAN USE ON OUR CHART.
-                                include('completeTOTALS.php');
+                                include('completeTOTALSforGraph.php');
                                 //END    
 
                                 //Provide a table that displays the individual results of each residence hall for a particular day that is selected by the drop-down list.
@@ -508,7 +508,7 @@ University Housing - Welcome Week Sign Up
         
                                 //START
                                 //Provide all Information FOR THE ENTIRE WEEK THAT WE CAN USE ON OUR CHART.
-                                include('completeTOTALS.php');
+                                include('completeTOTALSforGraph.php');
                                 //END    
 
                                 //Provide a table that displays the individual results of each residence hall for a particular day that is selected by the drop-down list.
@@ -707,7 +707,7 @@ University Housing - Welcome Week Sign Up
         //echo "You do not need all dates!";
                                 //START
                                 //Provide all Information FOR THE ENTIRE WEEK THAT WE CAN USE ON OUR CHART.
-                                include('completeTOTALS.php');
+                                include('completeTOTALSforGraph.php');
                                 //END    
 
                                 //Provide a table that displays the individual results of each residence hall for a particular day that is selected by the drop-down list.

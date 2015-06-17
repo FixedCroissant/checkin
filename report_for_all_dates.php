@@ -28,6 +28,13 @@ University Housing - Welcome Week Sign Up
 <!--jQuery DataTable CSS Import -->
 <link rel='stylesheet' type='text/css' href='//cdn.datatables.net/1.10.4/css/jquery.dataTables.css'>
 <link rel='stylesheet' type='text/css' href='css/report.css'>
+<!--Ability to Export tables to PDF or Excel format-->
+<script type="text/javascript" src="excel_export/html_table_export/tableExport.js"></script>
+<script type="text/javascript" src="excel_export/html_table_export/jquery.base64.js"></script>
+<!--End ability to Export tables-->
+<!--Bootstrap-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<!--End Bootstrap-->
 <!--Fav Icon-->
 <link rel="shortcut icon" href="https://housing.ncsu.edu/images/favicon.ico" />
 </head>
@@ -47,11 +54,27 @@ $(document).ready(function() {
 <p><img src="https://housing.ncsu.edu/secure/images/logo.png" alt="University Housing logo" title="NC State University Housing" /></p>
 <div id = "header"><h4>Welcome Week Report of Students</h4>
 </div>
+
+
+<!--Ability to Export Data -->
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" onclick="$('#welcome_week_checkin').tableExport({type:'excel',escape:'true'});" class="btn-warning btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i> Export Table Data</button>
+</div>
 <table id="welcome_week_checkin" border="1" align="center">
  <thead>
  
  <th>
      Resident Location
+ </th>
+ <th>
+     Residence Room
+ </th>
+ <th>
+     Residence Suffix
+ </th>
+ <th>Residence Bed #</th>
+ <th>
+     Student ID
  </th>
   <!--Arrival Time-->
  <th>
@@ -194,26 +217,16 @@ $(document).ready(function() {
                         if ($endTIMESTOP==8){
                             $easiertoReadTimeENDING="08:00 am";
                         }
-                       
-                        
-                        
                         
                         echo "Beginning Time: ". $easiertoReadTime;
                         echo "<br/>";
                         echo "Ending Time: ". $easiertoReadTimeENDING;
                          */
-                        
-                        
-                        
+
                         while ($row = $statement->fetch(PDO::FETCH_ASSOC)){
-                                        echo "<td>".$row["residence"]."</td>"."<td>".$row["resident_lname"]."</td>"."<td>".$row["resident_fname"]."</td>"."<td>".$row["date_of_swipe"]."</td>"."<td>".$row["time_of_swipe"]."</td>";;
+                                        echo "<td>".$row["residence"]."</td>"."<td>".$row["residence_room"]."</td>"."<td>".$row["residence_suffix"]."</td>"."<td>".$row["residence_bed_number"]."</td>"."<td>".$row["cardswipe"]."</td>"."<td>".$row["resident_lname"]."</td>"."<td>".$row["resident_fname"]."</td>"."<td>".$row["date_of_swipe"]."</td>"."<td>".$row["time_of_swipe"]."</td>";
                                         echo "</tr>";
                         }
-                         
-                         
-                         
-                           
-                            
                          //Close Data Row
                          echo "</tr>";
  ?>      

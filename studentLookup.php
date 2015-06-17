@@ -44,7 +44,9 @@ Description:
             <div id="instructions" class="center col-sm-12">
            <div class="row">
                <p>Student search, please start typing the student's last name to narrow down your search. <br/> <br/>Feel free to <strong>click</strong> the student's ID number and it will be copied to the Check-In page. You will need to go back to the main page to see this change.</p>
-            </div>
+            <br/>
+			 <p>To start a new search, please remove all prior text and start typing again.</p>
+			</div>
               
             <br/>
             <br/>
@@ -79,7 +81,7 @@ Description:
                     <div class="col-sm-3"></div>
                 </div>
                 
-              <!--Row #1 -- Middle Name Search -->
+              <!--Row #2 -- Middle Name Search -->
                 <div id="searchBY_MIDDLENAME" class="row">
                     <div class="col-sm-3"></div>
                     <div class="col-sm-3"><label for='middle_name'>Start typing middle name: <br/>(minimum 2 characters)</label><br/><input type='text' name='middle_name' id='middle_name' placeholder='Middle Name'/></div>
@@ -87,10 +89,8 @@ Description:
                     <div class="col-sm-3" style="margin-left: 10px; font-weight:bold;font-size: medium;text-decoration: underline;">Search Results</div>
                     <div class="col-sm-3"></div>
                 </div>
-              
-              
                 
-              <!--Row #1 -- Last Name Search -->
+              <!--Row #3 -- Last Name Search -->
                 <div id="searchBY_LASTNAME" class="row">
                     <div class="col-sm-3"></div>
                     <div class="col-sm-3"><label for='last_name'>Start typing last name: <br/>(minimum 2 characters)</label><br/><input type='text' name='last_name' id='last_name' placeholder='Last Name'/></div>
@@ -98,8 +98,6 @@ Description:
                     <div class="col-sm-3" style="margin-left: 10px; font-weight:bold;font-size: medium;text-decoration: underline;">Search Results</div>
                     <div class="col-sm-3"></div>
                 </div>
-              
-              
                  
                  <!--DISPLAY RESULTS RIGHT HERE-->
                  <div id ="results_placeholder" class="row">

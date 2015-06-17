@@ -177,12 +177,18 @@ $givenUNITNUMBER=NULL;
                     echo "<br/>";
                     echo "Residence Room:"."<span id=residence_room_needed><strong>".$temp_array["NC_HIS_UNIT_NUM"][0]."</strong></span>";
                     echo "<br/>";
-                    echo "Residence Unit Suffix:"."<span id=residence_room_needed><strong>".$temp_array["NC_HIS_UNIT_SUFFIX"][0]."</strong></span>";                    
+                    echo "Residence Unit Suffix:"."<span id=residence_unit_suffix_needed><strong>".$temp_array["NC_HIS_UNIT_SUFFIX"][0]."</strong></span>";
+                    echo "<br/>";
+                    echo "Residence Unit Bed:"."<span id=residence_unit_bed_needed><strong>".$temp_array["NC_HIS_UNIT_BED"][0]."</strong></span>";
                     echo "<br/>";
                      //New Values                        
                     echo "<span id=searched_residence_gender_needed style='display:none;'>".$temp_array["NC_GENDER"][0]."</span>";
                     echo "<br/>";
                     echo "<span id=searched_residence_classification_needed style='display:none;'>".$temp_array["ACAD_LEVEL_BOT"][0]."</span>";
+                    //On 06 11 2015,Added email address hidden
+                    echo "<br/>";
+                    echo "<span id=searched_residence_email_address style='display:none;'>".$temp_array["EMAIL_ADDR"][0]."</span>";
+
                     //Add checked in time. (Date1), use javascript to set value.
                     echo "<script type='text/javascript'>";
                     echo "$(\"#expected_check_in_date\").val('".$temp_array["DATE1"][0]."');";
@@ -235,7 +241,7 @@ $givenUNITNUMBER=NULL;
                         
                         //Post a new div that tells the end user that there are no results and to doub check the the student ID.//
                         echo "<div>";
-                        echo "<div id='no_results'>We do not recognize this Student ID for the Fall 2015 semester. Please double check the student ID again.</div>";
+                        echo "<div id='no_results'>We do not recognize this Student ID for the Summer Term II semester. Please double check the student ID again. Use the reset button below to start over.</div>";
                         echo "</div>"; //Close the "#results" div tag.
                     }
                     
@@ -306,6 +312,9 @@ $givenUNITNUMBER=NULL;
                         echo "Residence Room:"."<strong>".$row["NC_HIS_UNIT_NUM"]."</strong>";
                         echo "<br/>";
                         echo "Residence Unit Suffix:"."<span id=residence_room_needed><strong>".$row["NC_HIS_UNIT_SUFFIX"]."</strong></span>";
+                        //New information added on 6 11 2015.
+                        echo "<br/>";
+                        echo "Residence Unit Bed:"."<strong>".$row["NC_HIS_UNIT_BED"]."</strong>";
                         //New lines to accompany the hidden values of Searched for student's gender and classification
                         //Two line breaks.
                         echo "<br/>";

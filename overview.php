@@ -27,21 +27,21 @@ include('checkinPopulation.php');
  //Display Date Requested to End User for the Report Dashboard.
  //Temporary variable
  $dateREQUESTED=NULL;
- if($_REQUEST["dateREQUESTED"]==="2015-03-16"){
- $dateREQUESTED="Monday 03-16-2015";
+ if($_REQUEST["dateREQUESTED"]==="2015-08-03"){
+ $dateREQUESTED="Monday 08-03-2015";
  }
- else if($_REQUEST["dateREQUESTED"]==="2015-03-17"){
-     $dateREQUESTED="Tuesday 03-17-2015";
- }else if($_REQUEST["dateREQUESTED"]==="2015-03-18"){
-     $dateREQUESTED="Wednesday 03-18-2015";
- }else if($_REQUEST["dateREQUESTED"]==="2015-03-19"){
-     $dateREQUESTED="Thursday 03-19-2015";
- }else if($_REQUEST["dateREQUESTED"]==="2015-03-20"){
-     $dateREQUESTED="Friday 03-20-2015";
- }else if($_REQUEST["dateREQUESTED"]==="2015-03-21"){
-     $dateREQUESTED="Saturday 03-21-2015";
- }else if($_REQUEST["dateREQUESTED"]==="2015-03-22"){
-     $dateREQUESTED="Sunday 03-22-2015";
+ else if($_REQUEST["dateREQUESTED"]==="2015-08-04"){
+     $dateREQUESTED="Tuesday 08-04-2015";
+ }else if($_REQUEST["dateREQUESTED"]==="2015-08-05"){
+     $dateREQUESTED="Wednesday 08-05-2015";
+ }else if($_REQUEST["dateREQUESTED"]==="2015-08-06"){
+     $dateREQUESTED="Thursday 08-06-2015";
+ }else if($_REQUEST["dateREQUESTED"]==="2015-08-07"){
+     $dateREQUESTED="Friday 08-07-2015";
+ }else if($_REQUEST["dateREQUESTED"]==="2015-08-08"){
+     $dateREQUESTED="Saturday 08-08-2015";
+ }else if($_REQUEST["dateREQUESTED"]==="2015-08-09"){
+     $dateREQUESTED="Sunday 08-09-2015";
  }
  else if($_REQUEST["dateREQUESTED"]==="allDATES"){
      //$dateREQUESTED="All Dates for Opening Weekend";
@@ -66,9 +66,16 @@ University Housing - Welcome Week Sign Up
 <!--jQuery DataTable CSS Import -->
 <link rel='stylesheet' type='text/css' href='//cdn.datatables.net/1.10.4/css/jquery.dataTables.css'>
 <link rel='stylesheet' type='text/css' href='css/report.css'>
+<!--Ability to Export tables to PDF or Excel format-->
+<script type="text/javascript" src="excel_export/html_table_export/tableExport.js"></script>
+<script type="text/javascript" src="excel_export/html_table_export/jquery.base64.js"></script>
+<!--End ability to Export tables-->
 <!--CSS Needed for the date pickers-->
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<!--Bootstrap-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<!--End Bootstrap-->
 <!--Fav Icon-->
 <link rel="shortcut icon" href="https://housing.ncsu.edu/images/favicon.ico" />
 </head>
@@ -88,22 +95,24 @@ University Housing - Welcome Week Sign Up
                             <option value="#">Select ...</option>
                             <!--Get Custom Dates -->
                             <option value='custom'>Custom Dates</option>
+                            <!--Add option for Summer II -->
+                            <option value="2015-06-21">Summer II Term Check-In (June 21 2015)</option>
                             <!--Get All Dates -->
-                            <option value='allDATES'>Summary for All Dates</option>
+                            <!--<option value='allDATES'>Summary for All Dates</option>-->
                             <!--Monday -- Day 1-->
-                            <option value="2015-03-16">Monday, March 16, 2015</option>
+                           <!-- <option value="2015-03-16">Monday, March 16, 2015</option>-->
                             <!--Tuesday -- Day 2-->
-                            <option value="2015-03-17">Tuesday, March 17, 2015</option>
-                            <!--Wednesday -- Day 3-->
-                            <option value="2015-03-18">Wednesday, March 18, 2015</option>
+                            <!--  <option value="2015-03-17">Tuesday, March 17, 2015</option>-->
+                             <!--Wednesday -- Day 3-->
+                            <!-- <option value="2015-03-18">Wednesday, March 18, 2015</option>-->
                             <!--Thursday -- Day 4-->
-                            <option value="2015-03-19">Thursday, March 19, 2015</option>
-                            <!--Friday -- Day 5-->
-                            <option value="2015-03-20">Friday, March 20, 2015</option>
-                            <!--Saturday -- Day 6 -->
-                            <option value="2015-03-21">Saturday, March 21, 2015</option>
+                            <!--  <option value="2015-03-19">Thursday, March 19, 2015</option>-->
+                             <!--Friday -- Day 5-->
+                            <!--  <option value="2015-03-20">Friday, March 20, 2015</option>-->
+                             <!--Saturday -- Day 6 -->
+                            <!-- <option value="2015-03-21">Saturday, March 21, 2015</option>-->
                             <!-- Sunday -- Day 7 -->
-                            <option value="2015-03-22">Sunday, March 22, 2015</option>
+                            <!-- <option value="2015-03-22">Sunday, March 22, 2015</option>-->
                         </select>
             
             <!--Summer Start-->
@@ -152,7 +161,7 @@ University Housing - Welcome Week Sign Up
             <br/>
             
             <div id ="customDatesWanted">
-                <form action="http://localhost/apps/checkin/overview.php?dateREQUESTED=custom" id="customDatesCreated" name="customDates" method="POST">
+                <form action="overview.php?dateREQUESTED=custom" id="customDatesCreated" name="customDates" method="POST">
                 Beginning Date: <input id="customBeginDate" type="textbox" maxlength="18" name="beginningDateNeededCustom"></input> <br/>
                 Ending Date: &nbsp; <input id="customEndDate" type="textbox" maxlength="18" name="endingDateNeededCustom"></input>
                 <br/>
@@ -177,6 +186,15 @@ University Housing - Welcome Week Sign Up
             <!--Line Breaks-->
             <br/>
             <br/>
+
+    <!--Ability to Export Data -->
+    <div class="btn-group" role="group" aria-label="...">
+        <button type="button" onclick="$('#welcome_week_checkin').tableExport({type:'excel',escape:'true'});" class="btn-warning btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i> Export Table Data</button>
+    </div>
+    <!--Line breaks-->
+    <br/>
+    <br/>
+    <!--End the ability to export data.-->
 </div>
 <div id="columnControls">
     <p> Other Reports <img src="images/other_reports.png" alt="other reports available"></p>
@@ -313,7 +331,7 @@ University Housing - Welcome Week Sign Up
         
                                 //START
                                 //Provide all Information FOR THE ENTIRE WEEK THAT WE CAN USE ON OUR CHART.
-                                include('completeTOTALS.php');
+                                include('completeTOTALSforGraph.php');
                                 //END    
 
                                 //Provide a table that displays the individual results of each residence hall for a particular day that is selected by the drop-down list.
@@ -341,16 +359,16 @@ University Housing - Welcome Week Sign Up
 
                                                     if($residence==="Avent Ferry")
                                                         {
-                                                        echo "<a href='http://localhost/apps/checkin/overview_detailed_list.php?dateREQUESTED=".$dateNEEDED ."&building_needed=Avent%20Ferry' title='Click to get a sub-report of building. i.e. Avent Ferry broken down by AFC-A,AFC-B,AFC-C'>".$residence."</a>";
+                                                        echo "<a href='overview_detailed_list.php?dateREQUESTED=".$dateNEEDED ."&building_needed=Avent%20Ferry&dateBegin=".$beginDATENEEDED."&dateEnd=".$endDATENEEDED."' title='Click to get a sub-report of building. i.e. Avent Ferry broken down by AFC-A,AFC-B,AFC-C'>".$residence."</a>";
                                                     }
                                                     else if($residence==="Wood Hall"){
-                                                        echo "<a href='http://localhost/apps/checkin/overview_detailed_list.php?dateREQUESTED=".$dateNEEDED ."&building_needed=Wood%20Hall' title='Click to get a sub-report of building. i.e. Wood Hall broken into Wood-A and Wood-B'>".$residence."</a>";
+                                                        echo "<a href='overview_detailed_list.php?dateREQUESTED=".$dateNEEDED ."&building_needed=Wood%20Hall&dateBegin=".$beginDATENEEDED."&dateEnd=".$endDATENEEDED."' title='Click to get a sub-report of building. i.e. Wood Hall broken into Wood-A and Wood-B'>".$residence."</a>";
                                                     }
                                                     else if($residence==="Wolf Village"){
-                                                        echo "<a href='http://localhost/apps/checkin/overview_detailed_list.php?dateREQUESTED=".$dateNEEDED."&building_needed=Wolf%20Village' title='Click to get a sub-report of building. i.e. Wolf Village broken into buildings, Wolf Village A-H'>".$residence."</a>";
+                                                        echo "<a href='overview_detailed_list.php?dateREQUESTED=".$dateNEEDED."&building_needed=Wolf%20Village&dateBegin=".$beginDATENEEDED."&dateEnd=".$endDATENEEDED."' title='Click to get a sub-report of building. i.e. Wolf Village broken into buildings, Wolf Village A-H'>".$residence."</a>";
                                                     }
                                                     else if($residence==="Wolf Ridge"){
-                                                        echo "<a href='http://localhost/apps/checkin/overview_detailed_list.php?dateREQUESTED=".$dateNEEDED."&building_needed=Wolf%20Ridge' title='Click to get a sub-report of building. i.e. Wolf Ridge broken down into WR Grove, WR Innovation, WR Lakeview,etc.'>".$residence."</a>";
+                                                        echo "<a href='overview_detailed_list.php?dateREQUESTED=".$dateNEEDED."&building_needed=Wolf%20Ridge&dateBegin=".$beginDATENEEDED."&dateEnd=".$endDATENEEDED."' title='Click to get a sub-report of building. i.e. Wolf Ridge broken down into WR Grove, WR Innovation, WR Lakeview,etc.'>".$residence."</a>";
                                                     }
                                                     else{
                                                        echo $residence; 
@@ -431,8 +449,29 @@ University Housing - Welcome Week Sign Up
                                                     //End 5:01pm until 12:00am
                                                     
                                                     //Get totals
+                                                    //June 12 2015 -- also provide a new report that allows a clickable total amount.
                                                     include('begincell.php');
-                                                    echo $totalResults;
+                                                    //echo $totalResults;
+
+                                                    //Provide link that will display a new report once clicked that will show the total
+                                                    //amount of people for a specified residence hall or apartment.
+
+                                                    //echo $totalResults;
+                                                    //We will want ALL check-ins for a specific building.
+                                                    //Parameters needed
+                                                    //residence=___________________________ [Building parameter should already be housed in the $residence variable ]
+                                                    //beginTIME=___________________________ [Since it's the beginning of the day, should start at 0]
+                                                    //endTIME=_____________________________ [Since it's the end of the day, it should end at 24]
+                                                    //dateNEEDEDSTART = ___________________ [These can be custom dates in the format XXXX-XX-XX YYYY-MM-DD]
+                                                    //dateNEEDEDEND = _____________________ [This can be a custom date in the format XXXX-XX-XX YYYY-MM-DD]
+
+                                                    //Specifically setting both the begging time to the beginning of the day.
+                                                    $timeBEGINforReport=0;              //0 will be 0:00 i.e. the very beginning of the day.
+                                                    //Specifically setting the ending time for the end of the day.
+                                                    $timeENDforReport=24;               //24 will be 24:00 i.e. midnight
+
+                                                    echo "<a href='report_for_specific_area_totals.php?residence=".$residence."&dateNEEDEDSTART=".$beginDATENEEDED."&dateNEEDEDEND=".$endDATENEEDED."&beginTIME=".$timeBEGINforReport."&&endTIME=".$timeENDforReport."' target='_blank')'>$totalResults</a>";
+
                                                     echo"</td>";
 
                                                         //Add to our total Results array for usuage in the Chart.
@@ -498,10 +537,10 @@ University Housing - Welcome Week Sign Up
     //Dates Hard Coded for March 16 2015 through March 22 2015 
     if($dateNEEDED=="allDATES"){        
          //Get Begin Date
-         $beginDATENEEDED ="2015-03-16";
+         $beginDATENEEDED ="2015-06-21";
                 
          //Get End Date
-         $endDATENEEDED = "2015-03-22";                
+         $endDATENEEDED = "2015-06-21";
         
         //add javascript and show the current beginning date and ending date.
         echo "<script type='text/javascript'>";
@@ -515,7 +554,7 @@ University Housing - Welcome Week Sign Up
         
                                 //START
                                 //Provide all Information FOR THE ENTIRE WEEK THAT WE CAN USE ON OUR CHART.
-                                include('completeTOTALS.php');
+                                include('completeTOTALSforGraph.php');
                                 //END    
 
                                 //Provide a table that displays the individual results of each residence hall for a particular day that is selected by the drop-down list.
@@ -543,16 +582,16 @@ University Housing - Welcome Week Sign Up
 
                                                     if($residence==="Avent Ferry")
                                                         {
-                                                        echo "<a href='http://localhost/apps/checkin/overview_detailed_list.php?dateREQUESTED=".$dateNEEDED ."&building_needed=Avent%20Ferry' title='Click to get a sub-report of building. i.e. Avent Ferry broken down by AFC-A,AFC-B,AFC-C'>".$residence."</a>";
+                                                        echo "<a href='overview_detailed_list.php?dateREQUESTED=".$dateNEEDED ."&building_needed=Avent%20Ferry' title='Click to get a sub-report of building. i.e. Avent Ferry broken down by AFC-A,AFC-B,AFC-C'>".$residence."</a>";
                                                     }
                                                     else if($residence==="Wood Hall"){
-                                                        echo "<a href='http://localhost/apps/checkin/overview_detailed_list.php?dateREQUESTED=".$dateNEEDED ."&building_needed=Wood%20Hall' title='Click to get a sub-report of building. i.e. Wood Hall broken into Wood-A and Wood-B'>".$residence."</a>";
+                                                        echo "<a href='overview_detailed_list.php?dateREQUESTED=".$dateNEEDED ."&building_needed=Wood%20Hall' title='Click to get a sub-report of building. i.e. Wood Hall broken into Wood-A and Wood-B'>".$residence."</a>";
                                                     }
                                                     else if($residence==="Wolf Village"){
-                                                        echo "<a href='http://localhost/apps/checkin/overview_detailed_list.php?dateREQUESTED=".$dateNEEDED."&building_needed=Wolf%20Village' title='Click to get a sub-report of building. i.e. Wolf Village broken into buildings, Wolf Village A-H'>".$residence."</a>";
+                                                        echo "<a href='overview_detailed_list.php?dateREQUESTED=".$dateNEEDED."&building_needed=Wolf%20Village' title='Click to get a sub-report of building. i.e. Wolf Village broken into buildings, Wolf Village A-H'>".$residence."</a>";
                                                     }
                                                     else if($residence==="Wolf Ridge"){
-                                                        echo "<a href='http://localhost/apps/checkin/overview_detailed_list.php?dateREQUESTED=".$dateNEEDED."&building_needed=Wolf%20Ridge' title='Click to get a sub-report of building. i.e. Wolf Ridge broken down into WR Grove, WR Innovation, WR Lakeview,etc.'>".$residence."</a>";
+                                                        echo "<a href='overview_detailed_list.php?dateREQUESTED=".$dateNEEDED."&building_needed=Wolf%20Ridge' title='Click to get a sub-report of building. i.e. Wolf Ridge broken down into WR Grove, WR Innovation, WR Lakeview,etc.'>".$residence."</a>";
                                                     }
                                                     else{
                                                        echo $residence; 
@@ -633,8 +672,34 @@ University Housing - Welcome Week Sign Up
                                                     //End 5:01pm until 12:00am
                                                     
                                                     //Get totals
+                                                    //June 12 2015 -- also provide a new report that allows a clickable total amount.
                                                     include('begincell.php');
-                                                    echo $totalResults;
+
+                                                    //Provide link that will display a new report once clicked that will show the total
+                                                    //amount of people for a specified residence hall or apartment.
+
+                                                    //echo $totalResults;
+                                                    //We will want ALL check-ins for a specific building.
+                                                    //Parameters needed
+                                                    //residence=___________________________ [Building parameter should already be housed in the $residence variable ]
+                                                    //beginTIME=___________________________ [Since it's the beginning of the day, should start at 0]
+                                                    //endTIME=_____________________________ [Since it's the end of the day, it should end at 24]
+                                                    //dateNEEDEDSTART = ___________________ [These can be custom dates in the format XXXX-XX-XX YYYY-MM-DD]
+                                                    //dateNEEDEDEND = _____________________ [This can be a custom date in the format XXXX-XX-XX YYYY-MM-DD]
+
+                                                    //Specifically setting both the begging time to the beginning of the day.
+                                                    $timeBEGINforReport=0;              //0 will be 0:00 i.e. the very beginning of the day.
+                                                    //Specifically setting the ending time for the end of the day.
+                                                    $timeENDforReport=24;               //24 will be 24:00 i.e. midnight
+
+                                                    if($totalResults>0) {
+                                                         echo "<a href='report_for_specific_area_totals.php?residence=" . $residence . "&dateNEEDEDSTART=" . $beginDATENEEDED . "&dateNEEDEDEND=" . $endDATENEEDED . "&beginTIME=" . $timeBEGINforReport . "&&endTIME=" . $timeENDforReport . "' target='_blank')'>$totalResults</a>";
+                                                    }
+                                                    else{
+                                                        echo $totalResults;
+
+                                                    }
+                                                    //&&beginTIME=0&&endTIME=24&&dateNEEDEDSTART=2015-01-01&&dateNEEDEDEND=2015-06-01"
                                                     echo"</td>";
 
                                                         //Add to our total Results array for usuage in the Chart.
@@ -714,7 +779,8 @@ University Housing - Welcome Week Sign Up
         //echo "You do not need all dates!";
                                 //START
                                 //Provide all Information FOR THE ENTIRE WEEK THAT WE CAN USE ON OUR CHART.
-                                include('completeTOTALS.php');
+                                //This information is used on the Google Charts graphic.
+                                include('completeTOTALSforGraph.php');
                                 //END    
 
                                 //Provide a table that displays the individual results of each residence hall for a particular day that is selected by the drop-down list.
@@ -739,16 +805,16 @@ University Housing - Welcome Week Sign Up
 
                                                     if($residence==="Avent Ferry")
                                                         {
-                                                        echo "<a href='http://localhost/apps/checkin/overview_detailed_list.php?dateREQUESTED=".$dateNEEDED ."&building_needed=Avent%20Ferry' title='Click to get a sub-report of building. i.e. Avent Ferry broken down by AFC-A,AFC-B,AFC-C'>".$residence."</a>";
+                                                        echo "<a href='overview_detailed_list.php?dateREQUESTED=".$dateNEEDED ."&building_needed=Avent%20Ferry' title='Click to get a sub-report of building. i.e. Avent Ferry broken down by AFC-A,AFC-B,AFC-C'>".$residence."</a>";
                                                     }
                                                     else if($residence==="Wood Hall"){
-                                                        echo "<a href='http://localhost/apps/checkin/overview_detailed_list.php?dateREQUESTED=".$dateNEEDED ."&building_needed=Wood%20Hall' title='Click to get a sub-report of building. i.e. Wood Hall broken into Wood-A and Wood-B'>".$residence."</a>";
+                                                        echo "<a href='overview_detailed_list.php?dateREQUESTED=".$dateNEEDED ."&building_needed=Wood%20Hall' title='Click to get a sub-report of building. i.e. Wood Hall broken into Wood-A and Wood-B'>".$residence."</a>";
                                                     }
                                                     else if($residence==="Wolf Village"){
-                                                        echo "<a href='http://localhost/apps/checkin/overview_detailed_list.php?dateREQUESTED=".$dateNEEDED."&building_needed=Wolf%20Village' title='Click to get a sub-report of building. i.e. Wolf Village broken into buildings, Wolf Village A-H'>".$residence."</a>";
+                                                        echo "<a href='overview_detailed_list.php?dateREQUESTED=".$dateNEEDED."&building_needed=Wolf%20Village' title='Click to get a sub-report of building. i.e. Wolf Village broken into buildings, Wolf Village A-H'>".$residence."</a>";
                                                     }
                                                     else if($residence==="Wolf Ridge"){
-                                                        echo "<a href='http://localhost/apps/checkin/overview_detailed_list.php?dateREQUESTED=".$dateNEEDED."&building_needed=Wolf%20Ridge' title='Click to get a sub-report of building. i.e. Wolf Ridge broken down into WR Grove, WR Innovation, WR Lakeview,etc.'>".$residence."</a>";
+                                                        echo "<a href='overview_detailed_list.php?dateREQUESTED=".$dateNEEDED."&building_needed=Wolf%20Ridge' title='Click to get a sub-report of building. i.e. Wolf Ridge broken down into WR Grove, WR Innovation, WR Lakeview,etc.'>".$residence."</a>";
                                                     }
                                                     else{
                                                        echo $residence; 
@@ -827,11 +893,6 @@ University Housing - Welcome Week Sign Up
                                                         include('endcells/endcell.php');
                                                     }
                                                     //End 5:01pm until 12:00am
-
-
-
-
-
 
                                                         //Get totals
                                                         include('begincell.php');
@@ -964,191 +1025,8 @@ $( document ).ready(function() {
 
 
 <!--Provide totals for end row at the bottom-->
-<script type="text/javascript">
-//Variables to keep the totals.
-var total_mid_to_seven=0.0;
-var total_8 = 0.0;
-var total_9 = 0.0;
-var total_10 = 0.0;
-var total_11 = 0.0;
-var total_12 = 0.0;
-var total_13 = 0.0;
-var total_14 = 0.0;
-var total_15 = 0.0;
-var total_16 = 0.0;
-var total_17=0.0;
-var completeTOTAL = 0.0;
-
-//Variable to set the initial bed total.
-var initialbed_allotment=0.0;
-//Varaible to set the remaining bed total.
-var remaining_bed_number=0.0;
-
-//Calculate the total amount of beds that we have to utilize 
-//from the very beginning before any are taken away.
-$('#initial_bed_number ' ).each(function(){
-    val = parseFloat($(this).html());
-    if (val > 0){
-        initialbed_allotment+= val;        
-        //console.log(initialbed_allotment);
-            }           
-});//End Function
-
-$('#amount_of_beds_left ' ).each(function(){
-    val = parseFloat($(this).html());
-    if (val > 0){
-        remaining_bed_number+= val;
-            }           
-});//End Function
-
-//12:01-7:00am
-$('#welcome_week_checkin .timeGroup0 a').each(function(){
-    val = parseFloat($(this).html());
-    
-    if (val > 0){
-        total_mid_to_seven+= val;
-            }        
-});//End Function
-//8-9
-$('#welcome_week_checkin .timeGroup8 a').each(function(){
-    val = parseFloat($(this).html());
-    
-    if (val > 0){
-        total_8+= val;
-            }        
-});//End Function
-//9-10
-$('#welcome_week_checkin .timeGroup9 a').each(function(){
-    val = parseFloat($(this).html());
-    
-    if (val > 0){
-        total_9+= val;
-            }           
-});//End Function
-//10-11
-$('#welcome_week_checkin .timeGroup10 a').each(function(){
-    val = parseFloat($(this).html());
-    
-    if (val > 0){
-        total_10+= val;
-            }
-        console.log(total_10);    
-});//End Function
-//11-12
-$('#welcome_week_checkin .timeGroup11 a').each(function(){
-    val = parseFloat($(this).html());
-    
-    if (val > 0){
-        total_11+= val;
-            }
-        console.log(total_11);    
-});//End Function
-//12-1
-$('#welcome_week_checkin .timeGroup12 a').each(function(){
-    val = parseFloat($(this).html());
-    
-    if (val > 0){
-        total_12+= val;
-            }           
-});//End Function
-//1-2
-$('#welcome_week_checkin .timeGroup13 a').each(function(){
-    val = parseFloat($(this).html());
-    
-    if (val > 0){
-        total_13+= val;
-            }           
-});//End Function
-//2-3
-$('#welcome_week_checkin .timeGroup14 a').each(function(){
-    val = parseFloat($(this).html());
-    
-    if (val > 0){
-        total_14+= val;
-            }            
-});//End Function
-//3-4
-$('#welcome_week_checkin .timeGroup15 a').each(function(){
-    val = parseFloat($(this).html());
-    
-    if (val > 0){
-        total_15+= val;
-            }
-          
-});//End Function
-//4-5
-$('#welcome_week_checkin .timeGroup16 a').each(function(){
-    val = parseFloat($(this).html());
-    
-    if (val > 0){
-        total_16+= val;
-            }           
-});//End Function
-
-//5:01-midnight
-$('#welcome_week_checkin .timeGroup17 a').each(function(){
-    val = parseFloat($(this).html());
-    
-    if (val > 0){
-        total_17+= val;
-            }           
-});//End Function
-
-
-//Complete totals:
-$('#welcome_week_checkin .timeGroup18').each(function(){
-    val = parseFloat($(this).html());
-    if (val > 0){
-        completeTOTAL+= val;        
-        //console.log(completeTOTAL);
-            }           
-});//End Function
-
-
-
-//Display results on the bottom most row in the table.
-
-
-//12:01am to 7:00am time frame
-$('#total_area0').html(total_mid_to_seven);
-
-//8-9 am time period
-$('#total_area1').html(total_8);
-//9-10am time period
-$('#total_area2').html(total_9);
-//10-11am time period
-$('#total_area3').html(total_10);
-//11-12noon time period
-$('#total_area4').html(total_11);
-//12-1pm time period
-$('#total_area5').html(total_12);
-//1-2pm time period
-$('#total_area6').html(total_13);
-//2-3pm time period
-$('#total_area7').html(total_14);
-//3-4pm time period
-$('#total_area8').html(total_15);
-//4-5pm time period
-$('#total_area9').html(total_16);
-//5:01-12:00mid time perdio
-$('#total_area10').html(total_17);
-
-//Complete totals:
-$('#total_area11').html(completeTOTAL);
-
-//Create a total of the initial bed number
-$('#total_initial_bed_allotment').html(initialbed_allotment);
-//End the display of the total amount of initial beds that we have.
-
-//Provide the total REMAINING beds available.
-$('#remaining_bed_total').html(remaining_bed_number);
-//End the total REMAINING beds available.
-
-
-//END END END END
-//End display results.
-
-</script>
+<!--On 06 12 2015, using external JS file-->
+<script src="js/provideROWTotals.js"></script>
 
 <!--Provide a Google Graphic showing the changes-->
 <script type='text/javascript'>
@@ -1361,9 +1239,9 @@ function drawChartforCentralCampus() {
   }   
                     
                 if (message == '') {
-                        message = 'nothing';
+                        //message = 'nothing';
                     }
-                    alert('You selected ' + message);
+                    //alert('You selected ' + message);
           }
         
       }

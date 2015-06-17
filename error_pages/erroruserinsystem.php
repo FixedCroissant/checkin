@@ -22,9 +22,11 @@ and open the template in the editor.
 <h1>Housing Check-In Error</h1>
 <!-- InstanceEndEditable -->
 <!-- InstanceBeginEditable name="content" -->
-<h2><img src="images/error01.png"/>&nbsp; &nbsp; Error!</h2>
+<h2><img src="../images/error01.png"/>&nbsp; &nbsp; Error!</h2>
     <br/>    
-    <p>You have already been checked in, either at another location or right here at this residence.
+    <p>The student has already checked in, either at another location or right here at this residence.
+
+        Go back to check-in page: <a href="../index.php">Go Back to Check-In Page</a>
     </p>
     <br/>
     
