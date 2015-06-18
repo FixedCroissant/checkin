@@ -44,3 +44,4 @@ images/
 student-data/
 #IGNORE THE STUPID PHP STORM FOLDER
 .idea/
+Rakefile
