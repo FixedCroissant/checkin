@@ -45,3 +45,6 @@ student-data/
 #IGNORE THE STUPID PHP STORM FOLDER
 .idea/
 Rakefile
+#IGNORE THE check_SIS folder
+check_SIS
+
