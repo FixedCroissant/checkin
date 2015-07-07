@@ -1,6 +1,11 @@
 (function($){
         $.fn.extend({
             tableExport: function(options) {
+
+                //Add alert message
+                alert('When exporting table data to MS Excel, the top headers will be slighty off. \n\nTo fix do the following after opening: \n\nPress Ctrl+H (CMD+H on a Mac) to open the Find And Replace box. \n\nTo Fix the Spaces: \n1.)In the "Find What" Item, enter %20 \n2.)In "Replace with", put a blank space. \n3.)Now Click Replace All \n\nTo fix colons: \n\n1.)In the "Find What" Box, put %3A \n2.) In the "Replace With" Box put a :, 3.) Finally click Replace All. \n\nYou should now be given output that is very close to what is presented on this page. \n\nYou will now be presented with a save dialog for your Excel file.');
+                //End alert message
+
                 var defaults = {
 						separator: ',',
 						ignoreColumn: [],

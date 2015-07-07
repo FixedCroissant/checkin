@@ -25,10 +25,11 @@ $id_to_compare = strtolower($unityID);
 $authorization = checkSecurityTable($id_to_compare);
 
 //If the person is not in the 'welcome_week_signup_security_users' with a 'y' flag, then redirect them to a different page.
-if($authorization="n"){
+//comment out during testing
+//if($authorization="n"){
     //redirect to the correct page.
-    header('Location:http://housing.ncsu.edu/apps/checkin/index.php');
-}
+//    header('Location:http://housing.ncsu.edu/apps/checkin/index.php');
+//}
 
 
 
@@ -110,9 +111,6 @@ $time_Needed = "<span id='ct'></span>";
 
     </script>
     <!--End Additions-->
-
-
-
     <div id="header">
         <input type="button" name="logout" onClick="window.location='https://housing.ncsu.edu/Shibboleth.sso/Logout'"
                value="Logout of Beep System" style="float:right;" />

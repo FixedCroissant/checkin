@@ -51,10 +51,28 @@ class checkinPopulation {
     //Example:001106532; will provide 7 roommates for Bragaw; so 8 total roommates.
     //public $sql_roommate= "SELECT PS_NC_HIS_PPE_VW.EMPLID FROM PS_NC_HIS_PPE_VW WHERE PS_NC_HIS_PPE_VW.EMPLID != :searchedSTUDENT AND PS_NC_HIS_PPE_VW.building = :building AND PS_NC_HIS_PPE_VW.NC_HIS_UNIT_NUM = :unitNUMBER";
     
-    public $sql_roommate="SELECT PS_NC_HIS_PPE_VW.EMPLID FROM PS_NC_HIS_PPE_VW WHERE PS_NC_HIS_PPE_VW.EMPLID != :searchedSTUDENT AND PS_NC_HIS_PPE_VW.building = :building AND PS_NC_HIS_PPE_VW.NC_HIS_UNIT_NUM = :unitNUMBER AND PS_NC_HIS_PPE_VW.NC_HIS_UNIT_SUFFIX=:unitSUFFIXNUMBER";
+	//June 22 2015: Commented current term information and moved it to PS_NC_HIS_PP2_VW which allows for current term and future terms.
+    //public $sql_roommate="SELECT PS_NC_HIS_PPE_VW.EMPLID FROM PS_NC_HIS_PPE_VW WHERE PS_NC_HIS_PPE_VW.EMPLID != :searchedSTUDENT AND PS_NC_HIS_PPE_VW.building = :building AND PS_NC_HIS_PPE_VW.NC_HIS_UNIT_NUM = :unitNUMBER AND PS_NC_HIS_PPE_VW.NC_HIS_UNIT_SUFFIX=:unitSUFFIXNUMBER";
     
-    public $sql_getunitnumber="SELECT PS_NC_HIS_PPE_VW.EFFECTIVE_TERM, PS_NC_HIS_PPE_VW.BUILDING, PS_NC_HIS_PPE_VW.NC_HIS_UNIT_SUFFIX, PS_NC_HIS_PPE_VW.NC_HIS_UNIT_NUM FROM PS_NC_HIS_PPE_VW WHERE PS_NC_HIS_PPE_VW.EMPLID = :searchedSTUDENT";
+	//Commented out on June 22 2015 -- works perfectly find, but does not limit it based on term.
+	//public $sql_roommate="SELECT PS_NC_HIS_PP2_VW.EMPLID FROM PS_NC_HIS_PP2_VW WHERE PS_NC_HIS_PP2_VW.EMPLID != :searchedSTUDENT AND PS_NC_HIS_PP2_VW.building = :building AND PS_NC_HIS_PP2_VW.NC_HIS_UNIT_NUM = :unitNUMBER AND PS_NC_HIS_PP2_VW.NC_HIS_UNIT_SUFFIX=:unitSUFFIXNUMBER";
     
+	//Updated June 22 2015
+	public $sql_roommate="SELECT PS_NC_HIS_PP2_VW.EMPLID FROM PS_NC_HIS_PP2_VW WHERE PS_NC_HIS_PP2_VW.EMPLID != :searchedSTUDENT AND PS_NC_HIS_PP2_VW.building = :building AND PS_NC_HIS_PP2_VW.NC_HIS_UNIT_NUM = :unitNUMBER AND PS_NC_HIS_PP2_VW.NC_HIS_UNIT_SUFFIX=:unitSUFFIXNUMBER AND PS_NC_HIS_PP2_VW.EFFECTIVE_TERM= :term";
+    //End update June 22 2015
+	
+	
+	//June 22 2015: Commented out current term view (PS_NC_HIS_PPE_VW) and replaced with the current and future view created, (NC_HIS_PP2_VW).
+    //public $sql_getunitnumber="SELECT PS_NC_HIS_PPE_VW.EFFECTIVE_TERM, PS_NC_HIS_PPE_VW.BUILDING, PS_NC_HIS_PPE_VW.NC_HIS_UNIT_SUFFIX, PS_NC_HIS_PPE_VW.NC_HIS_UNIT_NUM FROM PS_NC_HIS_PPE_VW WHERE PS_NC_HIS_PPE_VW.EMPLID = :searchedSTUDENT";
+    
+	//Below works, but lets limit it to one returned item only.
+	//Unfortunately, it provides student information that matches Summer Term II (2157) and Fall (2158)Terms
+    //Comment out on 06 22 2015.
+	//public $sql_getunitnumber="SELECT PS_NC_HIS_PP2_VW.EFFECTIVE_TERM, PS_NC_HIS_PP2_VW.BUILDING, PS_NC_HIS_PP2_VW.NC_HIS_UNIT_SUFFIX, PS_NC_HIS_PP2_VW.NC_HIS_UNIT_NUM FROM PS_NC_HIS_PP2_VW WHERE PS_NC_HIS_PP2_VW.EMPLID = :searchedSTUDENT";
+    public $sql_getunitnumber="SELECT PS_NC_HIS_PP2_VW.EFFECTIVE_TERM, PS_NC_HIS_PP2_VW.BUILDING, PS_NC_HIS_PP2_VW.NC_HIS_UNIT_SUFFIX, PS_NC_HIS_PP2_VW.NC_HIS_UNIT_NUM FROM PS_NC_HIS_PP2_VW WHERE PS_NC_HIS_PP2_VW.EFFECTIVE_TERM= :term AND PS_NC_HIS_PP2_VW.EMPLID = :searchedSTUDENT";
+    
+	
+	
         
     
     public function getResidenceHall(){        
