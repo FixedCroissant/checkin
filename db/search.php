@@ -10,9 +10,13 @@
 include('../checkinPopulation.php');
 
 //Production information
-include('../../mysql/psdb.php');
-
+//include('../../mysql/psdb.php');
 //End Production Information
+
+//Development INFORMATION
+include('../../mysql/psdb-DV1.php');
+//End Development INFORMATION
+
 
 //Grab the information for the Housing MySQL Database to check and see if 
 //the roommate has checked into our system.
@@ -47,11 +51,11 @@ $givenUNITNUMBER=NULL;
 					   //Updated to Summer 2015. Summer 2015 is "2156"
 					  
 	//Summer Term 2		//Updated on 06 15 2015, going to 2015 Summer 2 term.
-	$term="2157";		//2157 is summer term 2		
+	//$term="2157";		//2157 is summer term 2		
 					   
 					   
 	//Fall 2015		   //Changed 06 04 2015. 
-	//$term="2158";	  //Looking specifically for students within the Fall 2015 semester, see lines 81-91 block of the change from view "PS_NC_HIS_PPE_VW" to "PS_NC_HIS_PP2_VW".	
+	$term="2158";	  //Looking specifically for students within the Fall 2015 semester, see lines 81-91 block of the change from view "PS_NC_HIS_PPE_VW" to "PS_NC_HIS_PP2_VW".	
  
   //Make the connection with the new query.
     //TESTING ENVIRONMENT - 04-29-2015 - Using Production environment connection 
@@ -84,6 +88,8 @@ $givenUNITNUMBER=NULL;
 		 
 			 
 		 //Testing June 22 2015.
+		 //Comment out on July 09 2015.
+		 /*
 		 echo "<script type='text/javascript'>";
 		 echo "console.log('this is in the row unit needed');";
 		 echo "console.log('this is in the row unit needed');";
@@ -95,7 +101,9 @@ $givenUNITNUMBER=NULL;
 		
 		//Close script
 		echo "</script>";		 
-		//End Testing June 22 2015.		 
+		//End Testing June 22 2015.
+		*/
+		
      }//end while loop
      
  //echo $givenUNITNUMBER; 
@@ -191,11 +199,11 @@ $givenUNITNUMBER=NULL;
 
         //Assign the roommates' student ID number and run a search on it, to provide the end user with information about the roommate as well.
         $roommateID=$rowFORROOMMATE["EMPLID"];
-		echo "<script type='text/javascript'>";
-		//Comment out on June 22 @ 10:11am
-		echo "console.log('test test');";
-		echo "console.log('".$rowFORROOMMATE["EMPLID"]."');";
-		echo "</script>";
+		//echo "<script type='text/javascript'>";
+		//Comment out on July 09 @ 1:45pm
+		//echo "console.log('test test');";
+		//echo "console.log('".$rowFORROOMMATE["EMPLID"]."');";
+		//echo "</script>";
      }
      
      /**********************************
@@ -241,6 +249,11 @@ $givenUNITNUMBER=NULL;
                     echo "<span id=searched_residence_email_address style='display:none;'>".$temp_array["EMAIL_ADDR"][0]."</span>";					
 					
 					//echo "Resident Phone:"."<span style=''>".$temp_array["PHONE"][0]."</span>";//
+					
+					
+					//begin temp
+					 echo "<span id=searched_residence_expected_date style='display:none;'>".$temp_array["EXPECT_DT"][0]."</span>";
+					//end temp
 					
 					
 					echo "<br/>";
@@ -459,14 +472,14 @@ $givenUNITNUMBER=NULL;
 
 //} //CLOSE IF STATEMENT
 
-/*************************************
+/***************************************
  * NO LONGER CHECK PEOPLE SOFT DATABASE.
  **************************************/                
                 
                 
-/********************
+/***************************************
  * CHECK INTERNAL HOUSING mySQL DATABASE
- ********************/
+ ****************************************/
                 
                 
 //Check mySQL Housing Database to see if the Roommate has Checked In                
