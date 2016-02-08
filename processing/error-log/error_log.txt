@@ -1,0 +1,330 @@
+[04-Aug-2015 10:02:11 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[04-Aug-2015 14:58:56 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[10-Aug-2015 17:10:06 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[11-Aug-2015 08:04:23 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[11-Aug-2015 08:07:24 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[11-Aug-2015 08:24:29 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[11-Aug-2015 08:26:20 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[11-Aug-2015 08:26:21 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[11-Aug-2015 08:32:50 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[11-Aug-2015 08:43:20 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[11-Aug-2015 08:49:28 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[11-Aug-2015 09:06:55 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[11-Aug-2015 10:36:26 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[11-Aug-2015 11:43:02 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[11-Aug-2015 11:56:25 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[11-Aug-2015 12:45:11 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[11-Aug-2015 13:02:26 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[11-Aug-2015 13:20:19 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[11-Aug-2015 13:53:37 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[11-Aug-2015 13:54:51 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[11-Aug-2015 14:01:35 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[11-Aug-2015 15:26:47 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[11-Aug-2015 15:27:45 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[11-Aug-2015 19:24:10 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[12-Aug-2015 08:41:32 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[12-Aug-2015 08:49:50 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[12-Aug-2015 09:05:23 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[12-Aug-2015 09:16:25 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[12-Aug-2015 09:34:05 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[12-Aug-2015 09:51:31 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[12-Aug-2015 09:55:54 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[12-Aug-2015 10:09:32 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[12-Aug-2015 10:18:50 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[12-Aug-2015 10:19:42 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[12-Aug-2015 10:45:53 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[12-Aug-2015 10:55:28 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[12-Aug-2015 11:05:35 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[12-Aug-2015 11:18:16 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[12-Aug-2015 11:40:48 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[12-Aug-2015 12:13:01 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[12-Aug-2015 13:02:39 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[12-Aug-2015 13:11:58 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[12-Aug-2015 13:47:49 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[12-Aug-2015 14:15:25 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[12-Aug-2015 14:44:07 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[12-Aug-2015 15:02:30 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[12-Aug-2015 15:25:00 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[12-Aug-2015 15:46:10 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[12-Aug-2015 15:47:57 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[12-Aug-2015 15:55:55 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[12-Aug-2015 16:51:33 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[12-Aug-2015 17:28:12 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[12-Aug-2015 17:28:24 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[12-Aug-2015 17:28:24 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/housing/public_html/apps/checkin/processing/checkin-done.php:505) in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 604
+[13-Aug-2015 08:49:08 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[13-Aug-2015 09:36:49 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[13-Aug-2015 09:44:24 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[13-Aug-2015 09:50:00 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[13-Aug-2015 10:01:13 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[13-Aug-2015 11:22:52 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[13-Aug-2015 12:25:01 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[13-Aug-2015 12:35:47 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[13-Aug-2015 12:54:18 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[13-Aug-2015 12:57:19 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[13-Aug-2015 13:33:27 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[13-Aug-2015 13:34:20 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[13-Aug-2015 15:18:08 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[13-Aug-2015 15:18:58 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[13-Aug-2015 15:20:48 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[13-Aug-2015 15:23:27 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[13-Aug-2015 15:24:05 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[13-Aug-2015 15:25:30 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[13-Aug-2015 15:26:21 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[13-Aug-2015 15:26:48 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[13-Aug-2015 15:27:15 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[13-Aug-2015 15:29:40 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[13-Aug-2015 15:30:51 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 505
+[14-Aug-2015 08:42:08 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 511
+[14-Aug-2015 09:27:53 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 511
+[14-Aug-2015 09:27:53 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/housing/public_html/apps/checkin/processing/checkin-done.php:511) in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 610
+[14-Aug-2015 11:09:59 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 511
+[14-Aug-2015 13:28:45 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 511
+[14-Aug-2015 14:00:40 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 511
+[16-Aug-2015 13:12:29 America/New_York] PHP Warning:  oci_execute(): ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_VALID&quot;, line 49
+ORA-06512: at &quot;CS.NC_HIS_ECHECK_INSERT&quot;, line 47
+ORA-06512: at line 1 in /home/housing/public_html/apps/checkin/processing/checkin-done.php on line 513
